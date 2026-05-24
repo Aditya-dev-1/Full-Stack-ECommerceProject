@@ -1,0 +1,36 @@
+﻿@model EmailDTO
+@{
+	ViewBag.Title = "EmailConfirmation";
+}
+
+<div>
+
+	@if(Model.IsEmailVerified == true)
+	{
+		<p>Your email has been verified successfully</p><br>
+		<p>Kindly Login</p>
+
+		<a asp-action="Login" asp-controller="Account">Login</a>
+	}
+	else
+	{
+		if(Model.IsEmailSent == true)
+		{
+			<p>We have sent a Email on your registered email id</p>
+		}
+		else
+		{
+			<p>An Email has been sent to your registered email id</p>
+		}
+		<form asp-action="ConfirmEmail" asp-controller="Account" method="post">
+			<input type="hidden" asp-for="Email"/>
+
+			<p>Didn't receive the email? or deleted by mistake</p><br>
+			<p>Click on the button to get new email</p>
+
+			<button class="button button-blue-back">Resend Confirmation Email</button>
+		</form> 
+		
+	}
+
+</div>

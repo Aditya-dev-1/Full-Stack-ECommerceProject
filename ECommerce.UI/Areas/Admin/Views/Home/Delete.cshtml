@@ -1,0 +1,81 @@
+﻿@model ProductResponse
+@{
+	ViewBag.Title = "Delete Product";
+}
+
+<div class="form-container">
+
+	<h1 class="text-large">Delete Product</h1>
+
+	<form asp-controller="Products" asp-action="Delete" method="post">
+
+		<input type="hidden" asp-for="ProductId" />
+
+		 <div class="product-image">
+			<img src="@Model.Product_Image_Path" />
+		</div> 
+
+		@*Product Name*@
+
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Product_Name" class="form-label">Product Name</label>
+			</div>
+			<div class="flex-1">
+				<input asp-for="Product_Name" class="form-input" disabled="disabled" />
+				<span asp-validation-for="Product_Name" class="text-red"></span>
+			</div>
+		</div>
+
+		@*Price*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Price" class="form-label">Product Price</label>
+			</div>
+			<div class="flex-1">
+				<input asp-for="Price" class="form-input" disabled="disabled" />
+				<span asp-validation-for="Price" class="text-red"></span>
+			</div>
+		</div>
+
+
+
+		@*Category*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="CategoryId" class="form-label">Category</label>
+			</div>
+			<div class="flex-1">
+				<input asp-for="CategoryName" class="form-input" disabled="disabled" />
+				<span asp-validation-for="CategoryId" class="text-red"></span>
+			</div>
+		</div>
+
+		@*Delete Button*@
+		<div class="form-field flex">
+			<div class="w-25">
+			</div>
+			<div class="flex-1">
+				<button type="submit" class="product-button button-red-back">Delete</button>
+			</div>
+		</div>
+
+		<a asp-controller="products" asp-action="index">Back To Home Page</a>
+
+	</form>
+</div>
+
+
+@section scripts {
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js">
+
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js" asp-fallback-test="window.jQuery.Validator" asp-fallback-src="jquery.validate.min.js">
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" asp-fallback-test="window.jQuery.Validator.unobtrusive" asp-fallback-src="jquery.validate.unobtrusive.min.js">
+	</script>
+} 

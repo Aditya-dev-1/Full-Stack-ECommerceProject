@@ -1,0 +1,27 @@
+[
+    {
+        "Id": "12DF2D0C-F849-4AAE-99DC-393F4B4443DD",
+        "Cat_Name": "Mobile",
+        "Status": true
+    },
+    {
+        "Id": "ED419975-8B09-4553-BB59-43B3ED382ADB",
+        "Cat_Name": "Laptop",
+        "Status": true
+    },
+    {
+        "Id": "2A51063A-0D41-4784-97FC-0FACBC3675B7",
+        "Cat_Name": "Men's Shirts",
+        "Status": true
+    },
+    {
+        "Id": "99798CF8-A700-4254-B641-960A278BA9E1",
+        "Cat_Name": "Men's Pents",
+        "Status": true
+    },
+    {
+        "Id": "D026BF3D-5E98-46FD-986E-82C97DA687BF",
+        "Cat_Name": "Men's Shoes",
+        "Status": true
+    }
+]

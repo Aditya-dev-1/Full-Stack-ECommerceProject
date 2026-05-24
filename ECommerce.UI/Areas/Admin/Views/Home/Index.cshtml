@@ -1,0 +1,9 @@
+﻿@{
+	ViewBag.Title = "Admin Home";
+	ViewBag.CurrentUrl = "Admin/Home/Index";
+}
+<h2 class="text-large">Admin Home Page</h2>
+
+<h5 class="text-large">@User.Identity?.Name</h5>
+
+<a asp-action="Index" asp-controller="Products" asp-area="">Home Page</a>

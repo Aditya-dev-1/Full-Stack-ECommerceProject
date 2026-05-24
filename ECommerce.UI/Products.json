@@ -1,0 +1,75 @@
+[
+    {
+        "Id": "AACEE317-8FFF-4A95-8047-C2B5D97C1CB6",
+        "CategoryId": "12DF2D0C-F849-4AAE-99DC-393F4B4443DD",
+        "Product_Name": "Apple IPhone 16",
+        "Description": "iPhone 16. Built for Apple Intelligence.Featuring Camera Control. 48 MP Fusion camera.Five vibrant colours.And A18 chip.",
+        "Price": 69999.00,
+        "qty_in_stock": 10,
+        "Product_Image_Url": "/Images/iphone-16.jpg"
+    },
+    {
+        "Id": "6FDA0A9A-FA97-4F5A-9D70-5DCA4A75414E",
+        "CategoryId": "12DF2D0C-F849-4AAE-99DC-393F4B4443DD",
+        "Product_Name": "Apple IPhone 13",
+        "Description": "iPhone 13.boasts an advanced dual-camera system that allows you to click mesmerising pictures with immaculate clarity.Furthermore, the lightning-fast A15 Bionic chip allows for seamless multitasking, elevating your performance to a new dimension",
+        "Price": 44999.00,
+        "qty_in_stock": 10,
+        "Product_Image_Url": "/Images/iphone-13.jpg"
+
+    },
+    {
+        "Id": "6117CA3D-1FF8-4DDF-A414-F75EF8952B23",
+        "CategoryId": "ED419975-8B09-4553-BB59-43B3ED382ADB",
+        "Product_Name": "HP Victus Intel Core i5 13th Gen 13420H",
+        "Description": "This HP Victus Gaming Laptop 15 includes the Intel Core i5-13420H processor, offering power and efficiency.This laptop also provides vivid details, featuring 75 W TGP for sustained power, NVIDIA DLSS 3 AI Tensor Core, NVIDIA Ada Lovelace Architecture",
+        "Price": 77800.00,
+        "qty_in_stock": 20,
+        "Product_Image_Url": "/Images/HP Victus.jpg"
+    },
+    {
+        "Id": "7E323A5D-0D1D-49F5-80C4-A2BB4C152F6A",
+        "CategoryId": "ED419975-8B09-4553-BB59-43B3ED382ADB",
+        "Product_Name": "ASUS Vivobook 15 ",
+        "Description": "The Vivobook 15, a multipurpose laptop with a 12th-generation Intel U-Series CPU, DDR4 memory, and PCIe 3.0 SSD storage, delivers remarkable performance for daily work.Its three-sided NanoEdge slim-bezel display offers breathtaking images, and its Dirac-designed audio system produces rich, immersive sound.",
+        "Price": 50990.00,
+        "qty_in_stock": 15,
+        "Product_Image_Url": "/Images/ASUS-Vivobook-15.png"
+    },
+    {
+        "Id": "CBA35257-D692-4B76-B033-C2078B0B013B",
+        "CategoryId": "2A51063A-0D41-4784-97FC-0FACBC3675B7",
+        "Product_Name": "Men Solid Collar Cotton T-Shirt",
+        "Description": "Men Collar T-Shirt",
+        "Price": 253.00,
+        "qty_in_stock": 8,
+        "Product_Image_Url": "/Images/men-tshirt.jpg"
+    },
+    {
+        "Id": "51D09FD8-B2F5-4054-A05B-3D16688E89A9",
+        "CategoryId": "2A51063A-0D41-4784-97FC-0FACBC3675B7",
+        "Product_Name": "Men Colorblock Round Neck Pure Cotton T-Shirt",
+        "Description": "Round Neck",
+        "Price": 274.00,
+        "qty_in_stock": 10,
+        "Product_Image_Url": "/Images/colorblock-roundneck-tshirt.jpg"
+    },
+    {
+        "Id": "6408796B-56B0-4C2F-9ADE-004C8D7C2624",
+        "CategoryId": "D026BF3D-5E98-46FD-986E-82C97DA687BF",
+        "Product_Name": "Casual Sneaker",
+        "Description": "Casual Sneaker Outdoor Shoes For Boys And Men",
+        "Price": 391.00,
+        "qty_in_stock": 40,
+        "Product_Image_Url": "/Images/casual-sneakers.jpg"
+    },
+    {
+        "Id": "E1147AAB-745B-4063-9FB5-99991357A1AD",
+        "CategoryId": "D026BF3D-5E98-46FD-986E-82C97DA687BF",
+        "Product_Name": "White Shoes",
+        "Description": "WHITE HIGH PREMIUM QUALITY Running Shoes For Men",
+        "Price": 478.00,
+        "qty_in_stock": 90,
+        "Product_Image_Url": "/Images/white-sneakers.jpg"
+    }
+]

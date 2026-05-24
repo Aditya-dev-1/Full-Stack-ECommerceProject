@@ -1,0 +1,70 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# NuGet
+packages/
+*.nupkg
+
+# Logs
+*.log
+
+# ASP.NET Core
+appsettings.Development.json
+
+# Publish output
+publish/
+
+# Entity Framework
+*.dbmdl
+
+# Test results
+TestResults/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Generated files
+Generated/
+
+# Temporary files
+tmp/
+temp/
+
+# Coverage files
+coverage/
+*.coverage
+*.coveragexml
+
+# Local database files
+*.mdf
+*.ldf
+
+# Dotnet watch
+.hotreload/
+
+# Azure
+.publishsettings
+
+# Node modules (if frontend added later)
+node_modules/
+
+wwwroot/

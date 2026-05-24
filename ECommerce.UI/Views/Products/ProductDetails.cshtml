@@ -1,0 +1,51 @@
+﻿@model ProductResponse
+@{
+	ViewBag.Title = "Product";
+}
+
+<form asp-controller="Products" asp-action="AddItemToCart" method="post">
+	<div class="product-simple">
+		<!-- Product Image -->
+		<div class="product-image">
+			<img src="@Model.Product_Image_Path">
+		</div>
+
+		<!-- Product Info -->
+		<div class="product-info">
+			<h1 class="product-title">@Model.Product_Name</h1>
+
+			<div class="price-section">
+				<span class="current-price">₹@Model.Price</span>
+			</div>
+
+			<div class="product-description">
+				<p>@Model.Description</p>
+			</div>
+
+			@if (User.IsInRole("Admin"))
+			{
+				<div class="product-buttons">
+					<a asp-action="Edit" asp-controller="Home" asp-area="Admin" asp-route-productId="@Model.ProductId"
+					   asp-area="Admin" class="product-button button-edit">Edit</a>
+
+					<a asp-action="Delete" asp-controller="Home" asp-area="Admin" asp-route-productId="@Model.ProductId"
+					   asp-area="Admin" class="product-button button-red-back">Delete</a>
+				</div>
+			}
+
+			<input type="hidden" asp-for="ProductId"/>
+
+			@if (ViewBag.IsCartItemExist == true)
+			{
+				<a asp-action="CartItems" asp-controller="Products" class="product-button button-add-to-cart">Go to Cart</a>
+			}
+			@if (ViewBag.IsCartItemExist == false)
+			{
+				<button class="product-button button-add-to-cart">Add to Cart</button>
+			}
+			
+
+		</div>
+	</div>
+</form>
+

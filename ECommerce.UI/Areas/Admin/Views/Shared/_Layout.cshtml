@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<link href="~/StyleSheet 1.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<div class="container">
+		<div class="page-content">
+			<div class="margin-bottom">
+				<h1 class="app-title">
+					<i class="fa-solid fa-people-simple"></i>
+					ECommerce App
+				</h1>
+			</div>
+
+			<div class="navbar mb">
+				<div class="flex">
+					<div class="navbar flex-1">
+						<ul class="flex">
+
+							@if (ViewBag.CurrentUrl=="~/Products/Index")
+							{
+								<li>
+									<a asp-action="Index" asp-controller="Products" class="nav-active">Home</a>
+								</li>
+							}
+							else
+							{
+							  <li>
+								  <a asp-action="Index" asp-controller="Products">Home</a>
+							  </li>	
+							}
+
+							@if (ViewBag.CurrentUrl == "~/Categories/Category")
+							{
+							  <li class="dropdown">
+								<span class="dropdown-toggle nav-active">Categories</span>
+								@await Component.InvokeAsync("Categories")
+							  </li>
+							}
+							else
+							{
+							  <li class="dropdown">
+								<span class="dropdown-toggle">Categories</span>
+								@await Component.InvokeAsync("Categories")
+							  </li>
+							}
+							
+						</ul>
+					</div>
+					<div class="flex-1 pr" id="search-box-div">
+						<div class="navbar account-links">
+
+							<ul>
+								@if (User.Identity.IsAuthenticated)
+								{
+									
+									<li>
+										<i class="fa-solid fa-user"></i>
+										@*User will give us the user name ,id etc of current logged in  user *@
+										@User.Identity?.Name
+									</li>
+
+									if (User.IsInRole("Admin"))
+									{
+										if(ViewBag.CurrentUrl == "Admin/Home/Index")
+										{
+										    <li>
+											   <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="nav-active">Admin Home</a>
+											</li>
+										}
+										else
+										{
+											<li>
+											   <a asp-controller="Home" asp-action="Index" asp-area="Admin">Admin Home</a>
+										    </li>
+										}
+
+										@if (ViewBag.CurrentUrl == "~/Products/Create")
+										{
+											<li>
+												<a asp-action="Create" asp-controller="Home" asp-area="Admin" class="nav-active" >Add Product</a>
+											</li>
+										}
+										else
+										{
+											<li>
+												<a asp-action="Create" asp-controller="Home" asp-area="Admin">Add Product</a>
+											</li>
+										}
+									}
+
+									<li>
+										<a asp-controller="Account" asp-action="Logout">LogOut</a>
+									</li>
+
+								}
+								else
+								{
+									@if(ViewBag.CurrentUrl == "~/Account/Login")
+									{
+									  <li>
+									      <a asp-controller="Account" asp-action="login" class="nav-active">Login</a>
+									  </li>
+									}
+									else
+									{
+									  <li>
+										  <a asp-controller="Account" asp-action="login">Login</a>
+									  </li>
+									}
+									@if(ViewBag.CurrentUrl == "~/Account/Register")
+									{
+									  <li>
+									      <a asp-controller="Account" asp-action="register" class="nav-active">Register</a>
+								      </li>
+									}
+									else
+									{
+									  <li>
+									      <a asp-controller="Account" asp-action="register">Register</a>
+								      </li>
+								
+									}
+								}
+
+
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="body">
+				@RenderBody()
+			</div>
+		</div>
+	</div>
+
+	@RenderSection("scripts", required: false)
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+</body>
+</html>

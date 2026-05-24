@@ -1,0 +1,68 @@
+﻿@model List<AddToCartResponse>
+@{
+	ViewBag.Title = "Shopping Cart";
+}
+
+<div class="cart-container">
+	<h2 class="cart-header">Your Cart</h2>
+
+	@if(Model.Count==0)
+	{
+		<h2 class="cart-header">Add Some Products</h2>
+
+		<a asp-action="Index" asp-controller="Products">Home</a>
+	}
+	else
+	{
+		@foreach (var item in Model)
+		{
+			
+			<div class="cart-item">
+
+				<img src="@item.Product_Image_Path" class="product-image-cart">
+
+				<div class="product-details-cart">
+
+					<div class="product-info-cart">
+						<div class="product-name-cart">@item.ProductName</div>
+					</div>
+
+					<div class="right-section">
+						<div class="product-price-cart">ItemPrice:₹@item.ProductPrice</div>
+
+
+
+						@if (User.Identity.IsAuthenticated)
+						{
+
+							var updateDto = new AddToCartResponse
+							{
+								ProductId = item.ProductId,
+								Quantity = item.Quantity,
+								ProductPrice = item.ProductPrice
+							};
+
+							@await Html.PartialAsync("_QuantityUpdatePartialView", updateDto)
+						}
+
+						 <a asp-controller="Products" asp-action="DeleteCartItem" asp-route-cartId="@item.CartId" class="remove-link">Remove</a> 
+
+					</div>
+
+				</div>
+
+			</div>
+		}
+
+		<div class="total-price">Total:₹@ViewBag.TotalPrice</div>
+
+
+		<!-- Checkout Button -->
+		<div class="cart-footer">
+			<button class="checkout-btn">Proceed to Checkout</button>
+		</div>
+	}
+	
+</div>
+
+

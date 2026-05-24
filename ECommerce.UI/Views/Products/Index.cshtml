@@ -1,0 +1,22 @@
+﻿@model List<ProductResponse>
+@{
+	ViewBag.Title = "Products";
+	ViewBag.CurrentUrl = "~/Products/Index";
+}
+
+<h1 class="text-large">Products</h1>
+
+<div class="products-grid">
+	@foreach (var product in Model)
+	{
+		<div class="product-card">
+			<a asp-action="ProductDetails" asp-controller="Products" asp-route-productId="@product.ProductId">
+				<img src="@product.Product_Image_Path" alt="@product.Product_Name" asp-append-version="true" />
+			</a>
+			<h3>@product.Product_Name</h3>
+			<span class="price">@product.Price?.ToString("C")</span>
+
+		</div>
+	}
+</div>
+

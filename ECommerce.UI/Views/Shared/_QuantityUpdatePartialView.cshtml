@@ -1,0 +1,51 @@
+﻿@model AddToCartResponse
+
+ <form asp-action="UpdateItemQuantity" asp-controller="Products" method="post" id="form-data">
+    <input type="hidden" asp-for="ProductId" value="@Model.ProductId" />
+
+    <div class="quantity-section">
+        <!-- Quantity Label -->
+        <label asp-for="Quantity" class="quantity-label">Quantity:</label>
+
+        <!-- Quantity Controls -->
+        <div class="quantity-control">
+
+            <button type="submit" name="change" value="-1" class="qty-btn minus">−</button>
+            <input asp-for="Quantity" value="@Model.Quantity" class="qty-input" readonly />
+            <button type="submit" name="change" value="+1" class="qty-btn plus">+</button>
+
+        </div>
+    </div>
+
+    
+    <div class="price">₹@(Model.ProductPrice* Model.Quantity)</div>
+
+    
+</form>  
+
+@*<form id="form-data">
+    <input type="hidden" asp-for="ProductId" value="@Model.ProductId" id="product-id" />
+
+    <div class="quantity-section">
+        <!-- Quantity Label -->
+        <label asp-for="Quantity" class="quantity-label">Quantity:</label>
+
+        <!-- Quantity Controls -->
+        <div class="quantity-control">
+
+            <button type="submit" name="change" value="-1" class="qty-btn minus">−</button>
+            <input asp-for="Quantity" value="@Model.Quantity" class="qty-input" readonly />
+            <button type="submit" name="change" value="+1" class="qty-btn plus">+</button>
+
+        </div>
+    </div>
+
+
+    
+
+     <div class="price" >₹@(Model.ProductPrice* Model.Quantity)</div> 
+
+
+</form>  
+
+<script src="~/QuantityUpdation.js"></script> *@

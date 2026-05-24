@@ -1,0 +1,118 @@
+﻿@model ProductsAddRequest
+@{
+	ViewBag.Title = "Add Product";
+	ViewBag.CurrentUrl = "~/Products/Create";
+}
+
+<div class="form-container">
+	<h1 class="text-large">Add Product</h1>
+
+	<form asp-action="Create" asp-controller="Products" method="post" enctype="multipart/form-data">
+		@*Product Name*@
+
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Product_Name" class="form-label">Product Name</label>
+			</div>
+			<div class="flex-1">
+				<input asp-for="Product_Name" class="form-input" />
+				<span asp-validation-for="Product_Name" class="text-red"></span>
+			</div>
+		</div>
+
+		@*Description*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Description" class="form-label">Product Description</label>
+			</div>
+			<div class="flex-1">
+				<input asp-for="Description" class="form-input" />
+				<span asp-validation-for="Description" class="text-red"></span>
+			</div>
+		</div>
+
+		@*Price*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="Price" class="form-label">Product Price</label>
+			</div>
+			<div class="flex-1">
+				<input asp-for="Price" class="form-input" />
+				<span asp-validation-for="Price" class="text-red"></span>
+			</div>
+		</div>
+
+		@*Quantity*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="qty_in_stock" class="form-label">Quantity</label>
+			</div>
+			<div class="flex-1">
+				<input asp-for="qty_in_stock" class="form-input" />
+				<span asp-validation-for="qty_in_stock" class="text-red"></span>
+			</div>
+		</div>
+
+		@*Category*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label asp-for="CategoryId" class="form-label">Category</label>
+			</div>
+			<div class="flex-1">
+				<select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-input">
+					<option value="">Please Select</option>
+				</select>
+				<span asp-validation-for="CategoryId" class="text-red"></span>
+			</div>
+		</div>
+
+		@*ProductImageUrl*@
+		<div class="form-field flex">
+			<div class="w-25">
+				<label  asp-for="Product_Image" class="form-label">Choose only .jpg,.jpeg and .png Image and upto 5 mb</label>
+			</div>
+			<div class="flex-1">
+				<input type="file" asp-for="Product_Image" class="form-input" />
+				<span asp-validation-for="Product_Image" class="text-red"></span>
+			</div>
+		</div>
+
+		<div class="form-field flex">
+			<div class="w-25"></div>
+			<div class="flex-1">
+				<button class="button button-green-back">Create</button>
+			</div>
+
+			@if (ViewBag.Errors != null)
+			{
+				<div class="text-red ml">
+					<ul>
+						@foreach(string error in ViewBag.Errors)
+						{
+							<li>@error</li>
+						}
+					</ul>
+				</div>
+			}
+
+			<div asp-validation-summary="All" class="text-red"></div>
+
+		</div>
+	</form>
+</div>
+
+
+@section scripts {
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js">
+
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js" asp-fallback-test="window.jQuery.Validator" asp-fallback-src="jquery.validate.min.js">
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" asp-fallback-test="window.jQuery.Validator.unobtrusive" asp-fallback-src="jquery.validate.unobtrusive.min.js">
+	</script>
+} 
+
