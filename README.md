@@ -1,6 +1,6 @@
 # E-Commerce Web Application
 
-A Full Stack E-Commerce web application developed using ASP.NET Core MVC and Entity Framework Core. The project includes authentication, role-based authorization, product management, shopping cart functionality, and order management features.
+A Full Stack E-Commerce web application developed using ASP.NET Core MVC and Entity Framework Core. The project includes authentication, role-based authorization, product management, shopping cart functionality.
 
 ## Features
 
@@ -8,9 +8,7 @@ A Full Stack E-Commerce web application developed using ASP.NET Core MVC and Ent
 - Google Authentication
 - Role-Based Authorization
 - Product Management
-- Category Management
 - Shopping Cart Functionality
-- Order Management
 - Admin Dashboard
 - Form Validation
 - Middleware and Filters
@@ -52,11 +50,11 @@ tests/
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/ecommerce-project.git
+git clone https://github.com/Aditya-dev-1/Full-Stack-ECommerceProject.git
 ```
 
 ```bash
-cd ecommerce-project
+cd Full-Stack-ECommerceProject
 ```
 
 ```bash
